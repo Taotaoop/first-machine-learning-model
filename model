@@ -31,3 +31,35 @@ X = home_data[feature_names]
 
 # Check your answer
 step_2.check()
+
+# Review data
+# print description or statistics from X
+print(X.describe)
+print("_____________")
+# print the top few lines
+print(X.head)
+
+from sklearn.tree import DecisionTreeRegressor
+#specify the model. 
+#For model reproducibility, set a numeric value for random_state when specifying the model
+iowa_model = DecisionTreeRegressor(random_state=1)
+
+# Fit the model
+iowa_model.fit(X,y)
+print(iowa_model)
+# Check your answer
+step_3.check()
+
+predictions = iowa_model.predict(X)
+print(predictions)
+print(y)
+# Check your answer
+step_4.check()
+
+# You can write code in this cell
+prediction = iowa_model.predict(X.head())
+print(prediction)
+print('---------------')
+
+print(y.head())
+# Check your answer
